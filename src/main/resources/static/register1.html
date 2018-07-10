@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <script src="./src/js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<form id="userForm">
+    <input name="email" type="text">
+    <input name="password" type="text">
+    <input name="phoneNumber" type="text">
+    <input name="firstName" type="text">
+    <input name="lastName" type="text">
+    <input name="birthDate" type="text">
+    <input name="country" type="text">
+    <input name="usdRange" type="text">
+    <input name="notus" type="text">
+    <input type="button" onclick="addUser()">
+</form>
+</body>
+<script>
+    function addUser() {
+        var userData = $("#userForm").serializeArray();
+        $.ajax({
+            url: 'register',
+            data: userData,
+            dataType: 'json',
+            type: 'post',
+            success: function (data) {
+                alert(data.result);
+            }
+        });
+    }
+</script>
+</html>

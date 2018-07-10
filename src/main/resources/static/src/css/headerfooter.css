@@ -1,0 +1,163 @@
+/*
+**header
+*/
+html.nav-open {
+  height: 100vh;
+  overflow: hidden;
+}
+html.nav-close {
+  height: auto;
+  overflow: visible;
+}
+html,
+body {
+  min-height: 100vh;
+}
+header {
+  background-color: #222;
+  padding: 20px 0;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+header > div {
+  justify-content: space-around;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+header > div > a > img {
+  height: 50px;
+  vertical-align: middle;
+}
+header > div > a > span {
+  vertical-align: middle;
+  color: #fff;
+}
+header > div > ul.menu {
+  justify-content: space-around;
+}
+header > div > ul.menu > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 20px;
+  text-align: center;
+}
+header > div > ul.menu > li > a {
+  color: #fff;
+  cursor: pointer;
+}
+header > div > div.menu-btn {
+  justify-content: space-around;
+  flex-direction: column;
+  cursor: pointer;
+  opacity: 1;
+}
+header > div > div.menu-btn > i.bar {
+  display: block;
+  position: relative;
+}
+header > div > div.menu-btn > i.bar::before {
+  top: -5px;
+}
+header > div > div.menu-btn > i.bar::after {
+  top: 5px;
+}
+@media (max-width: 800px) {
+  header {
+    padding: 0;
+  }
+  header > .header-wrap {
+    justify-content: space-between;
+  }
+  header > .header-wrap > a > span {
+    display: inline;
+  }
+  header > .header-wrap > ul.menu {
+    display: none;
+    position: fixed;
+    top: 50px;
+    flex-direction: column;
+    background-color: #222;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    border-top: 1px solid #101010;
+  }
+  header > .header-wrap > ul.menu > li {
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  header > .header-wrap > .menu-btn {
+    display: flex;
+  }
+}
+@media (min-width: 800px) {
+  header > .header-wrap {
+    justify-content: space-around;
+  }
+  header > .header-wrap > a > span {
+    display: none;
+  }
+  header > .header-wrap > ul.menu {
+    display: flex!important;
+    position: static;
+    flex-direction: row;
+    text-align: center;
+  }
+  header > .header-wrap > .menu-btn {
+    display: none;
+  }
+}
+.bar::before,
+.bar::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.bar,
+.bar::before,
+.bar::after {
+  width: 15px;
+  height: 2px;
+  background-color: #fff;
+}
+/*
+**footer
+*/
+footer {
+  padding: 30px 0;
+  background-color: #222;
+  color: #fff;
+  width: 100%;
+}
+footer > div {
+  width: 90%;
+  margin: 0 auto;
+}
+footer > div > ul {
+  margin-right: 30px;
+}
+footer a {
+  color: #fff;
+}
+.contact > p,
+.contact > div {
+  margin: 10px 0;
+}
+.contact i {
+  font-size: 20px;
+}
+.register input {
+  margin: 5px 0;
+}
+.register input[text] {
+  width: 300px;
+}
+.register > form > div {
+  margin: 0 5px;
+}
+#clause + label > a {
+  color: #0077b5;
+}

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dynamic.appliction.dao.ShareMapper" >
+  <resultMap id="BaseResultMap" type="com.dynamic.appliction.pojo.bean.Share" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="referralid" property="referralid" jdbcType="INTEGER" />
+    <result column="beintroducedid" property="beintroducedid" jdbcType="INTEGER" />
+    <result column="creation_time" property="creationTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, referralid, beintroducedid, creation_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_share
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user_share
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.dynamic.appliction.pojo.bean.Share" >
+    insert into user_share (id, referralid, beintroducedid, 
+      creation_time)
+    values (#{id,jdbcType=INTEGER}, #{referralid,jdbcType=INTEGER}, #{beintroducedid,jdbcType=INTEGER}, 
+      #{creationTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dynamic.appliction.pojo.bean.Share" >
+    insert into user_share
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="referralid != null" >
+        referralid,
+      </if>
+      <if test="beintroducedid != null" >
+        beintroducedid,
+      </if>
+      <if test="creationTime != null" >
+        creation_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="referralid != null" >
+        #{referralid,jdbcType=INTEGER},
+      </if>
+      <if test="beintroducedid != null" >
+        #{beintroducedid,jdbcType=INTEGER},
+      </if>
+      <if test="creationTime != null" >
+        #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dynamic.appliction.pojo.bean.Share" >
+    update user_share
+    <set >
+      <if test="referralid != null" >
+        referralid = #{referralid,jdbcType=INTEGER},
+      </if>
+      <if test="beintroducedid != null" >
+        beintroducedid = #{beintroducedid,jdbcType=INTEGER},
+      </if>
+      <if test="creationTime != null" >
+        creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dynamic.appliction.pojo.bean.Share" >
+    update user_share
+    set referralid = #{referralid,jdbcType=INTEGER},
+      beintroducedid = #{beintroducedid,jdbcType=INTEGER},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

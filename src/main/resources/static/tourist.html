@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邮箱钱包地址获取分享码</title>
+</head>
+<body>
+<form>
+    <input type="text" name="email" placeholder="邮箱"/>
+    <input type="text" name="purseAddress" placeholder="钱包地址"/>
+    <input type="button" value="生成推荐码" id="resetInitBtn">
+</form>
+</body>
+<script src="./src/js/jquery-3.3.1.js"></script>
+<script>
+    $("#resetInitBtn").click(function () {
+        var user = new Object();
+        user.email = $("input[name='email']").val();
+        user.purseAddress = $("input[name='purseAddress']").val();
+        $.ajax({
+            url: 'register',
+            type: 'post',
+            data: {
+                user: JSON.stringify(user)
+            },
+            success: function (data) {
+
+            }
+        });
+    });
+</script>
+</html>

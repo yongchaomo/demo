@@ -1,0 +1,56 @@
+/*
+**清除影响页面设计的默认样式；
+**包含常用的标签。
+*/
+ol,
+ul{
+    list-style-type: none;
+}
+
+a{text-decoration: none;}
+
+input{
+    outline: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+input{
+    margin: 0;
+    padding: 0;
+
+}
+input{
+    background-color: transparent;
+}
+.flex-box{
+    display: flex;
+}
+.text-center{
+    text-align: center;
+}
+
+.text-indent{
+    text-indent: 30px;
+}
+
+@media (max-width: 800px) {
+    .content{
+        padding: 50px 0;
+    }
+}
+
+@media (min-width: 800px) {
+    .content{
+        padding: 90px 0;
+    }
+}

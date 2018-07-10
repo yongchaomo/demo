@@ -1,0 +1,60 @@
+/**
+ * åˆå§‹åŒ–æµè§ˆå™¨é»˜è®¤æ ·å¼
+ **/
+
+html,body,div,ol,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,input,button,textarea,p,span,table,th,td,form{margin:0;padding:0}
+body,input,button,select,textarea{font:12px/1.5 "Microsoft Yahei","Helvetica Neue";color:#34495e;
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+  	-moz-font-feature-settings: "liga","kern";}
+table{border-collapse:collapse;border-spacing:0}
+img,a img{border:0}
+a{color:#369;outline:medium none;text-decoration:none;}
+a:hover{text-decoration:none}
+label{cursor:pointer}
+ul li,.ol li{list-style:none}
+em,cite,i{font-style:normal}
+p{word-wrap: break-word; word-break: break-all;} /*å…¨éƒ¨è‹±æ–‡å­—ç¬¦ä¸‹è‡ªåŠ¨æ¢è¡Œ*/
+
+
+/* æµ®åŠ¨ */
+.z { float: left !important; }
+.y { float: right !important; }
+
+/* é¼ æ ‡æ ·å¼ï¼Œå¯ä»¥æ ¹æ®éœ€è¦æŒ‰åºæ·»åŠ  */
+.cur1 { cursor: pointer; }
+
+/* æ˜¾ç¤º/éšè— */
+.show { display: block !important; }
+.hide { display: none !important; }
+
+/* ç›¸å¯¹å®šä½ */
+.pos { position: relative; }
+
+
+/* ==== æŒ‰é’® Buttons  2015-1-12==== */
+.lang-btn {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	cursor: pointer;
+	white-space: nowrap;
+	background-color: #3499DA;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color: #FFF;
+	border: none;
+	letter-spacing: 1px;
+	overflow: hidden;
+	text-align: center;
+	border-radius:2px;
+}
+
+/*ç½‘ç«™æ•´ä½“ç°è‰²èƒŒæ™¯*/
+body,
+.body-gray { background-color: #eff3f5; }
+/*éƒ¨åˆ†ç™½è‰²èƒŒæ™¯*/
+.bg-white { background-color: #fff;}
+/*è®¤è¯*/
+.icon-certified2{color: #e74c3c;font-size: 14px;}

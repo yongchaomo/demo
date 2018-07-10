@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dynamic.appliction.dao.MailBoxMapper" >
+  <resultMap id="BaseResultMap" type="com.dynamic.appliction.pojo.bean.MailBox" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="systemid" property="systemid" jdbcType="INTEGER" />
+    <result column="mailname" property="mailname" jdbcType="VARCHAR" />
+    <result column="usd_range" property="usdRange" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="sendingtime" property="sendingtime" jdbcType="TIMESTAMP" />
+    <result column="creationtime" property="creationtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.dynamic.appliction.pojo.bean.MailBox" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, systemid, mailname, usd_range, title, country, sendingtime, creationtime
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from mailbox
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from mailbox
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.dynamic.appliction.pojo.bean.MailBox" >
+    insert into mailbox (id, systemid, mailname, 
+      usd_range, title, country, 
+      sendingtime, creationtime, content
+      )
+    values (#{id,jdbcType=INTEGER}, #{systemid,jdbcType=INTEGER}, #{mailname,jdbcType=VARCHAR}, 
+      #{usdRange,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, 
+      #{sendingtime,jdbcType=TIMESTAMP}, #{creationtime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.dynamic.appliction.pojo.bean.MailBox" >
+    insert into mailbox
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="systemid != null" >
+        systemid,
+      </if>
+      <if test="mailname != null" >
+        mailname,
+      </if>
+      <if test="usdRange != null" >
+        usd_range,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="sendingtime != null" >
+        sendingtime,
+      </if>
+      <if test="creationtime != null" >
+        creationtime,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="systemid != null" >
+        #{systemid,jdbcType=INTEGER},
+      </if>
+      <if test="mailname != null" >
+        #{mailname,jdbcType=VARCHAR},
+      </if>
+      <if test="usdRange != null" >
+        #{usdRange,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="sendingtime != null" >
+        #{sendingtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creationtime != null" >
+        #{creationtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dynamic.appliction.pojo.bean.MailBox" >
+    update mailbox
+    <set >
+      <if test="systemid != null" >
+        systemid = #{systemid,jdbcType=INTEGER},
+      </if>
+      <if test="mailname != null" >
+        mailname = #{mailname,jdbcType=VARCHAR},
+      </if>
+      <if test="usdRange != null" >
+        usd_range = #{usdRange,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="sendingtime != null" >
+        sendingtime = #{sendingtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creationtime != null" >
+        creationtime = #{creationtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.dynamic.appliction.pojo.bean.MailBox" >
+    update mailbox
+    set systemid = #{systemid,jdbcType=INTEGER},
+      mailname = #{mailname,jdbcType=VARCHAR},
+      usd_range = #{usdRange,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      sendingtime = #{sendingtime,jdbcType=TIMESTAMP},
+      creationtime = #{creationtime,jdbcType=TIMESTAMP},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dynamic.appliction.pojo.bean.MailBox" >
+    update mailbox
+    set systemid = #{systemid,jdbcType=INTEGER},
+      mailname = #{mailname,jdbcType=VARCHAR},
+      usd_range = #{usdRange,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      sendingtime = #{sendingtime,jdbcType=TIMESTAMP},
+      creationtime = #{creationtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
