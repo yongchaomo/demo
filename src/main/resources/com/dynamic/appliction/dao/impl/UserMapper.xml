@@ -72,6 +72,11 @@
     usd_range, notus, recommend, sharing_token, state, confirmation_token, purse_address,
     creation_time
   </sql>
+    <select id="queryUser" resultMap="BaseResultMap">
+        select id, email , phone_number, first_name, last_name, language, birth_date, country,
+    usd_range, notus, recommend, sharing_token, state, confirmation_token, purse_address,
+    creation_time from user where email= #{email}
+    </select>
     <select id="queryEmail" resultMap="BaseResultMap">
 		select id,state,confirmation_token,sharing_token,purse_address from user
 		where
@@ -79,7 +84,7 @@
 	</select>
     <select id="login" resultMap="BaseResultMap">
 		select * from user where email =
-		#{email} and password =#{password}
+		#{email} and password = #{password}
 	</select>
     <select id="userList" resultMap="BaseResultMap">
         select
@@ -305,7 +310,7 @@
                 creation_time = #{creationTime,jdbcType=TIMESTAMP},
             </if>
         </set>
-        where id = #{id,jdbcType=INTEGER}
+        where email = #{email,jdbcType=VARCHAR}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.dynamic.appliction.pojo.bean.User">
     update user

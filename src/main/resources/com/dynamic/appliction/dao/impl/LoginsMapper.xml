@@ -23,7 +23,7 @@
   </sql>
 
     <select id="loginsList" resultMap="BaseResultMap">
-        select * from user_logins where user_id=#{userId}
+        select * from user_logins ul where user_id=#{userId} order by ul.creation_time desc
     </select>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select

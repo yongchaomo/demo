@@ -1,75 +1,170 @@
 .canvas-box{
     width: 100%;
-    height: 100vh;
+    height: 800px;
     box-sizing: border-box;
 
 }
 #wrapper {
-    height:100%;
+    height:800px;
     width:100%;
-    text-align: center;
+    // text-align: center;
     display: table;
     position:absolute;
-  }
+  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   
+  font-weight: 500;
+  }
+
+  canvas{
+    width: 1950px;
+    height: 800px;
+  }
   #title {
-    display: table-cell;
-    vertical-align: middle;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     margin: auto;
-    >h1{
-        padding: 60px 0 60px 0;
+    flex-direction: column;
+    justify-content: space-around;
+    .time{
+      text-align: center;
     }
-    >div.coin-status{
-      >div.count-down{
-        >p#time{
-          font-size: 40px;
-          font-weight: 900;
-        }
-      }
-      >div.progress{
-        width: 50%;
-        max-width: 300px;
-        height: 100px;
-
-        margin: 0 auto 20px;
-        >div.progress-desc {
-          justify-content: space-between;
-          // line-height: 50px;
-        }
-        >div.bar-outline{
-          background-color: #222;
-          border-radius: 6px;
-          width: 100%;
-          height: 50px;
-          display: flex;
-          justify-content: space-around;
-          flex-direction: column;
-          >div.progress-bar{
-            width: 90%;
-            height: 40%;
-            background-color: #fff;
-            border-radius: 6px;
-            margin: 0 auto;
-            
-          }
-        }
-      }
-    }
-
-    >p{
-      
-    }
-    .btn{
+    >div.wrap{
+      display: flex;
+      justify-content: space-around;
       position: relative;
       z-index: 50;
+      // background: rgba(255, 255, 255, .3);
+      border-radius: 5px;
+      >div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex: 1;
+        padding: 0 20px;
+        p.slogan-desc,
+        div.count-down{
+          flex-wrap: wrap;
+        }
+      }
+      >div.wrap-l{
+        font-weight: 500;
+        font-size: 24px;
+        >p.slogan-desc{
+          // font-weight: 700;
+          
+          text-align: left;
+          text-indent: 30px;
+        }
+        
+      }
+      >div.wrap-r{
+        box-shadow: 0 0 35px 10px rgba(0, 0, 0, .35);
+        // background-color: #262b2e;
+        // background-color: #fff;
+        // color: #262b2e;
+        >div.count-down{
+
+          >p{
+            font-weight: 700;
+            margin-bottom: 1rem;
+          }
+          >div.time{
+            display: flex;
+            justify-content: space-between;
+            >div.time-items{
+              border: 1px solid #222;
+              border-radius: 5px;
+              background-color: #222;
+              // background-color: #262b2e;
+              color: #fff;
+              padding-left: 10px;
+              padding-right: 10px;
+              // text-shadow: 5px 5px #262b2e;
+              >b{
+                display: block;
+                font-size: 50px;
+              }
+
+            }
+          }
+        }
+        >div.progress{
+          width: 100%;
+          // max-width: 500px;
+          // height: 100px;
+          // margin: 0 auto 20px;
+          .progress-status-l,
+          .progress-status-r,
+          .progress-status{
+            display: flex;
+          }
+          .progress-status{
+            justify-content: space-between;
+            margin-bottom: 1em;
+          }
+            
+          .progress-status-l{
+            justify-content: flex-start;
+          }
+          .progress-status-r{
+            
+            justify-content: flex-end
+          }
+          
+          
+        }
+      }
+    }
+
+
+    .btn{
+      // position: relative;
+      // z-index: 50;
+      // margin-bottom: 10px;
     }
   }
-
+  @media (max-width:800px){
+    #title>div{
+      flex-direction: column;
+      height: 100%;
+    }
+    p.slogan-desc{
+      margin-top: 0;
+    }
+    .newsletter-wrap{
+      margin-top: 0;
+    }
+    .dateline{
+      font-size: 30px;
+    }
+    .wrap-l{
+      padding-left: 0!important;
+      padding-right: 0!important;
+    }
+  }
+  @media (min-width:800px){
+    #title>div{
+      flex-direction: row;
+      height: 56%;
+    }
+    .dateline{
+      font-size: 40px;
+    }
+    p.slogan-desc{
+      margin-top: 70px;
+    }
+    .newsletter-wrap{
+      margin-top: 70px;
+    }
+  }
   #wrapper canvas {
     position: absolute;
     top: 0;
@@ -89,3 +184,76 @@
     filter: blur(3px);
     opacity: .6;
   }
+
+
+
+
+#sample_goal{
+  
+}
+.goalProgress {
+
+  background: #f7f7f7;
+}
+div.progressBar,
+.goalProgress{
+  // border: 1px solid transparent;
+  border-radius: 16px;
+  text-indent: 16px;
+}
+div.progressBar {
+  // background: rgb(255, 127, 7);
+  background: linear-gradient(45deg,hsla(0,0%,100%,.15) 25%,transparent 0,transparent 50%,hsla(0,0%,100%,.15) 0,hsla(0,0%,100%,.15) 75%,transparent 0,transparent);
+  background-color: rgb(255, 127, 7);
+  color: #fff;
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  // font-weight: 700;
+  // padding: 2px;
+  display: block;
+  overflow: hidden;
+  width: 20px;
+}
+span.goalAmount {
+  display: none;
+  text-indent: -9999px;
+}
+
+
+  div.newsletter{
+    // max-width: 1170px;
+    // margin: 0 auto;
+    >div.newsletter-wrap{
+        // max-width: 400px;
+        // margin: 0 auto;
+        >h3{
+            margin: 16px 0;
+        }
+        >div.ipt-wrap{
+            width: 100%;
+            position: relative;
+            input{
+                background: transparent;
+                color: #fff;
+                padding: 22px 12px;
+                line-height: 0;
+                font-size: 24px;
+            }
+            
+            >input:nth-child(1){
+                width: 100%;
+            }
+            >input:nth-child(2){
+                width: 30%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                transition: background-color .3s ease;
+            }
+            >input:nth-child(2):hover{
+                background-color: #ff7f07;
+                border-color: #ff7f07;
+            }
+        }
+    }
+}

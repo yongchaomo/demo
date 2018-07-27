@@ -1,3 +1,65 @@
+body {
+  min-height: 100vh;
+  font-weight: 400;
+}
+ol,
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+input {
+  outline: none;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+input {
+  margin: 0;
+  padding: 0;
+}
+input {
+  background-color: transparent;
+}
+.flex-box {
+  display: flex;
+}
+.text-center {
+  text-align: center;
+}
+.advantages .nav,
+.title,
+.thead,
+.menu li {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media (max-width: 800px) {
+  .content {
+    padding-top: 50px;
+  }
+}
+@media (min-width: 800px) {
+  .content {
+    padding-top: 104px;
+  }
+}
+.navbar-header > img.header-logo {
+  width: 79px;
+  height: auto!important;
+  padding: 0!important;
+}
+.navbar-header > a.navbar-brand {
+  padding-left: 0;
+}
 /*
 **header
 */
@@ -9,10 +71,6 @@ html.nav-close {
   height: auto;
   overflow: visible;
 }
-html,
-body {
-  min-height: 100vh;
-}
 header {
   background-color: #222;
   padding: 20px 0;
@@ -20,63 +78,83 @@ header {
   z-index: 100;
   width: 100%;
 }
-header > div {
-  justify-content: space-around;
-  padding-right: 30px;
+header > div.header-wrap {
+  justify-content: space-between;
   box-sizing: border-box;
 }
-header > div > a > img {
-  height: 50px;
-  vertical-align: middle;
+header > div.header-wrap > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-header > div > a > span {
-  vertical-align: middle;
+header > div.header-wrap > a > img {
+  margin-right: 10px;
+}
+header > div.header-wrap > a > span {
   color: #fff;
+  font-weight: 700;
 }
-header > div > ul.menu {
+header > div.header-wrap > ul.menu {
   justify-content: space-around;
 }
-header > div > ul.menu > li {
+header > div.header-wrap > ul.menu > li {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding-left: 20px;
-  text-align: center;
 }
-header > div > ul.menu > li > a {
+header > div.header-wrap > ul.menu > li > a {
   color: #fff;
   cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-header > div > div.menu-btn {
+header > div.header-wrap > ul.menu > li > a.scrollto:hover {
+  color: #ff7f07;
+}
+header > div.header-wrap > ul.menu > li > a.active {
+  color: #ff7f07;
+}
+header > div.header-wrap > ul.menu .buytoken-btn {
+  background-color: #ff7f07;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.45);
+}
+header > div.header-wrap > div.menu-btn {
   justify-content: space-around;
   flex-direction: column;
   cursor: pointer;
   opacity: 1;
 }
-header > div > div.menu-btn > i.bar {
+header > div.header-wrap > div.menu-btn > i.bar {
   display: block;
   position: relative;
 }
-header > div > div.menu-btn > i.bar::before {
+header > div.header-wrap > div.menu-btn > i.bar::before {
   top: -5px;
 }
-header > div > div.menu-btn > i.bar::after {
+header > div.header-wrap > div.menu-btn > i.bar::after {
   top: 5px;
+}
+@media screen and (min-width: 800px) and (max-width: 905px) {
+  .logo-slogan {
+    display: none;
+  }
 }
 @media (max-width: 800px) {
   header {
-    padding: 0;
+    padding: 10px 0;
   }
-  header > .header-wrap {
-    justify-content: space-between;
+  header img {
+    height: 30px;
   }
-  header > .header-wrap > a > span {
-    display: inline;
-  }
-  header > .header-wrap > ul.menu {
+  header .header-wrap > ul.menu {
     display: none;
     position: fixed;
     top: 50px;
+    left: 0;
     flex-direction: column;
     background-color: #222;
     height: 100vh;
@@ -84,30 +162,59 @@ header > div > div.menu-btn > i.bar::after {
     box-sizing: border-box;
     border-top: 1px solid #101010;
   }
-  header > .header-wrap > ul.menu > li {
+  header .header-wrap > ul.menu > li {
     text-align: left;
     padding-top: 5px;
     padding-bottom: 5px;
+    padding-right: 20px;
   }
-  header > .header-wrap > .menu-btn {
+  header .header-wrap > ul.menu > li:last-child {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  header .header-wrap > ul.menu > li:last-child > a {
+    padding-left: 20px;
+  }
+  header .header-wrap > .menu-btn {
     display: flex;
   }
 }
 @media (min-width: 800px) {
-  header > .header-wrap {
-    justify-content: space-around;
+  header img {
+    height: 64px;
   }
-  header > .header-wrap > a > span {
-    display: none;
+  header .header-wrap {
+    justify-content: space-between;
   }
-  header > .header-wrap > ul.menu {
+  header .header-wrap > ul.menu {
     display: flex!important;
     position: static;
     flex-direction: row;
     text-align: center;
   }
-  header > .header-wrap > .menu-btn {
+  header .header-wrap > .menu-btn {
     display: none;
+  }
+}
+.header-wrap {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .header-wrap {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .header-wrap {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .header-wrap {
+    width: 1170px;
   }
 }
 .bar::before,
@@ -132,22 +239,59 @@ footer {
   color: #fff;
   width: 100%;
 }
-footer > div {
-  width: 90%;
-  margin: 0 auto;
+footer > .container > div:not(:last-child) {
+  margin-bottom: 20px;
 }
-footer > div > ul {
-  margin-right: 30px;
+.footer-bottom > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-footer a {
-  color: #fff;
+.footer-logo {
+  position: relative;
+  width: 53px;
+  height: 50px;
+  background: url("../image/logo.png") no-repeat center;
+  background-size: cover;
 }
-.contact > p,
-.contact > div {
-  margin: 10px 0;
+.footer-logo > a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
-.contact i {
-  font-size: 20px;
+.contact > p {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.contact-link,
+.contact-link > a {
+  display: flex;
+  justify-content: center;
+}
+.contact .contact-link > a {
+  flex-direction: column;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #222;
+}
+.contact .contact-link > a:not(:last-child) {
+  margin-right: 20px;
+}
+.contact .contact-link > a:hover > i {
+  transform: scale(1.1);
+}
+.contact .contact-link i {
+  font-size: 25px;
+  transition: transform .5s;
+}
+.address {
+  line-height: 1.75;
 }
 .register input {
   margin: 5px 0;

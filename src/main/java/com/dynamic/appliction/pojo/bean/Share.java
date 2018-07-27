@@ -3,48 +3,59 @@ package com.dynamic.appliction.pojo.bean;
 import java.io.Serializable;
 
 public class Share implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-	private Integer id;
+    private Integer id;
 
-	private Integer referralid;
+    private String email;
 
-	private Integer beintroducedid;
+    private Integer referralid;
 
-	private String creationTime;
+    private Integer beintroducedid;
 
-	public Integer getId() {
-		return id;
-	}
+    private String creationTime;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public Integer getReferralid() {
-		return referralid;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setReferralid(Integer referralid) {
-		this.referralid = referralid;
-	}
+    public Integer getReferralid() {
+        return referralid;
+    }
 
-	public Integer getBeintroducedid() {
-		return beintroducedid;
-	}
+    public void setReferralid(Integer referralid) {
+        this.referralid = referralid;
+    }
 
-	public void setBeintroducedid(Integer beintroducedid) {
-		this.beintroducedid = beintroducedid;
-	}
+    public Integer getBeintroducedid() {
+        return beintroducedid;
+    }
 
-	public String getCreationTime() {
-		return creationTime;
-	}
+    public void setBeintroducedid(Integer beintroducedid) {
+        this.beintroducedid = beintroducedid;
+    }
 
-	public void setCreationTime(String creationTime) {
-		this.creationTime = creationTime;
-	}
+    public String getCreationTime() {
+        return creationTime;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setCreationTime(String creationTime) {
+        this.creationTime = creationTime;
+    }
+
 }

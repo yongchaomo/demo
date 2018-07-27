@@ -18,11 +18,13 @@ public interface UserMapper {
 
     User queryEmail(@Param("email") String email);
 
+    User queryUser(@Param("email") String email);
+
     User login(@Param("email") String email, @Param("password") String password);
 
-    int updateByPrimaryKeySelective(User record);
-
     int modifyPassword(@Param("email") String email, @Param("password") String password);
+
+    int updateByPrimaryKeySelective(User record);
 
     List<User> userList(@Param("country") String country, @Param("usdRange") String usdRange);
 
@@ -31,4 +33,6 @@ public interface UserMapper {
     User confirmation(@Param("confirmationToken") String confirmationToken);
 
     User referral(@Param("sharingToken") String sharingToken);
+
+
 }

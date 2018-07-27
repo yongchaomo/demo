@@ -28,7 +28,7 @@ public class AdminLoginIntercept implements HandlerInterceptor {
         // 如果没有登录没有登录，可以使用 reponse.send() 跳转页面。后面要跟return false,否则无法结束;
         String referral = request.getParameter("referral");
         if (referral != null) {
-            CookiesUtil.setCookie(response, "referral", referral, 24 * 7);
+            CookiesUtil.setCookie(response, "referral", referral, 60 * 60);
         }
         return true;
     }
